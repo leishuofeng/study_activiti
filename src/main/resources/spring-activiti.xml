@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
 	http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
@@ -16,14 +17,14 @@
     <mvc:annotation-driven></mvc:annotation-driven>
 
     <bean id="myDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <property name="driverClass" value = "${dbDriver}"></property>
-        <property name="url" value = "${dbUrl}"></property>
-        <property name="password" value = "${dbPassword}"></property>
-        <property name="username" value = "${dbUsername}"></property>
+        <property name="driverClass" value="${dbDriver}"></property>
+        <property name="url" value="${dbUrl}"></property>
+        <property name="password" value="${dbPassword}"></property>
+        <property name="username" value="${dbUsername}"></property>
     </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="myDataSource" />
+        <property name="dataSource" ref="myDataSource"/>
     </bean>
 
     <bean id="springProcessEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
@@ -39,11 +40,11 @@
         <property name="processEngineConfiguration" ref="springProcessEngineConfiguration"></property>
     </bean>
 
-    <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
-    <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService" />
-    <bean id="identityService" factory-bean="processEngine" factory-method="getIdentityService" />
-    <bean id="formService" factory-bean="processEngine" factory-method="getFormService" />
-    <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService" />
-    <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService" />
-    <bean id="managementService" factory-bean="processEngine" factory-method="getManagementService" />
+    <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"/>
+    <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService"/>
+    <bean id="identityService" factory-bean="processEngine" factory-method="getIdentityService"/>
+    <bean id="formService" factory-bean="processEngine" factory-method="getFormService"/>
+    <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"/>
+    <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"/>
+    <bean id="managementService" factory-bean="processEngine" factory-method="getManagementService"/>
 </beans>
