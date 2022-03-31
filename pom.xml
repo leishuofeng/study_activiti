@@ -20,7 +20,7 @@
         <activity.version>5.22.0</activity.version>
         <mysql.version>8.0.15</mysql.version>
         <!--<mysql.version>5.1.29</mysql.version>-->
-        <springframework-version>4.2.5.RELEASE</springframework-version>
+        <springframework-version>5.3.18</springframework-version>
     </properties>
 
     <dependencies>
